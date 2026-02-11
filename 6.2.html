@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>второе задание</title>
+</head>
+<body>
+    <div>
+        <form id="form">
+            <label for="num1">Первое число:</label>
+            <input type="number" id="num1" required>
+
+            <label for="num2">Второе число:</label>
+            <input type="number" id="num2" required>
+
+            <button type="button" onclick="Max()">Вычислить</button>
+        </form>
+        <p id="result"></p>
+    </div>
+<script>
+    function getmax(a,b){
+        const average = (a+b)/2;
+        const halfdiff = Math.abs(a-b)/2;
+        const max = average+ halfdiff;
+        return max;
+    }
+    function Max(){
+        const num1 = parseFloat(document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById('num2').value);
+        const maxval = getmax(num1, num2);
+        document.getElementById('result').textContent = `Максимум: ${maxval}`;
+    }
+</script>
+</body>
+</html>
